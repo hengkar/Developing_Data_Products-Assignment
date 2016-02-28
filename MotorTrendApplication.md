@@ -26,16 +26,16 @@ From plot, we can see some higher correlations between variables like
 
 Regression Analysis and Prediction
 ========================================================
-The regression model will predict MPG based on, Transmission type, Weight and Horsepower. Linear regression model:
+The regression model will predict MPG based on, Transmission type, Weight and Horsepower. 
 
-$$MPG = \beta_0 + \beta_{1}AM + \beta_{2}HP + \beta_{3}WT + \epsilon$$
+Linear regression model:
 
 
 ```r
 fit <- lm(mpg ~ am + wt + hp, data = mtcars)
 ```
 
-Coefficient for the $\beta_0, \beta_1, \beta_2 and \beta_3$
+Coefficient:
 
 
 |            |   Estimate| Std. Error|   t value| Pr(>&#124;t&#124;)|
@@ -49,7 +49,6 @@ Details of Application
 ========================================================
 
 Shiny App Screen Shot
-![Shiny App](MotorTrendApplication-figure/plot.png "Plot")
 ![Shiny App](MotorTrendApplication-figure/predict.png "prediction")
 
 ***
@@ -58,7 +57,9 @@ URL
 
 - [Shiny Application](https://hengkar.shinyapps.io/MotorTrendAnalysis/)
 
-- [Pitch Presentation](https://hengkar.shinyapps.io/MotorTrendAnalysis/)
+- [GitHub Pitch Presentation](http://htmlpreview.github.io/?https://github.com/hengkar/Developing_Data_Products-Assignment/blob/master/MotorTrendApplication.html)
 
-- [Github Source Code](https://github.com/hengkar/Developing_Data_Products-Assignment)
+- [Rpub Pitch Presentation](http://rpubs.com/hengkar/156563)
+
+- [GitHub Source Code](https://github.com/hengkar/Developing_Data_Products-Assignment)
 
