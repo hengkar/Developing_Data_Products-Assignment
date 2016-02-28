@@ -6,9 +6,13 @@
 
 [https://hengkar.shinyapps.io/MotorTrendAnalysis/](https://hengkar.shinyapps.io/MotorTrendAnalysis/)
 
-###Pitch Presentation
+###Pitch Presentation - GitHub
 
 [http://htmlpreview.github.io/?https://github.com/hengkar/Developing_Data_Products-Assignment/blob/master/MotorTrendApplication.html](http://htmlpreview.github.io/?https://github.com/hengkar/Developing_Data_Products-Assignment/blob/master/MotorTrendApplication.html)
+
+###Pitch Presentation - Rpub
+
+[http://rpubs.com/hengkar/156563](http://rpubs.com/hengkar/156563)
 
 ###Analysis base on report
 
