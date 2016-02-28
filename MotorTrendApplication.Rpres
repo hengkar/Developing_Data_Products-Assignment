@@ -1,0 +1,85 @@
+Data Analysis: Effect and Prediction of Automatic or Manual Transmission on Miles Per Gallon of cars
+========================================================
+author: Heng Kar
+date: 28 Feb 2016
+
+Overview
+========================================================
+
+This analysis is to explore the relationship between a set of variables on miles per gallon (MPG) (outcome). The analysis are particularly focus in the following two questions:
+
+- "Is an automatic or manual transmission better for MPG"
+- "Quantify the MPG difference between automatic and manual transmissions"
+
+
+Exploring Data With Plot
+========================================================
+
+From plot, we can see some higher correlations between variables like 
+- "hp"
+- "wt"
+- "am"
+
+***
+
+```{r, echo=FALSE}
+library(ggplot2)
+
+mtcars$cyl <- as.factor(mtcars$cyl)
+mtcars$vs <- as.factor(mtcars$vs)
+mtcars$am <- factor(mtcars$am, labels = c('Automatic','Manual'))
+mtcars$gear <- as.factor(mtcars$gear)
+mtcars$carb <- as.factor(mtcars$carb)
+
+g1 <- ggplot(data = mtcars, aes(x = hp, y = mpg, colour = am))
+g1 <- g1 +  facet_grid(.~am) + geom_point(size = 4)
+g1 <- g1 + xlab("hp") + ylab("mpg")
+
+g2 <- ggplot(data = mtcars, aes(x = wt, y = mpg, colour = am))
+g2 <- g2 +  facet_grid(.~am) + geom_point(size = 4)
+g2 <- g2 + xlab("wt") + ylab("mpg")
+
+g3 <- ggplot(data = mtcars, aes(x = cyl, y = mpg, colour = am))
+g3 <- g3 +  facet_grid(.~am) + geom_point(size = 4)
+g3 <- g3 + xlab("cyl") + ylab("mpg")
+
+
+library(gridExtra)
+grid.arrange(g1, g2, g3)
+
+```
+
+Regression Analysis and Prediction
+========================================================
+The regression model will predict MPG based on, Transmission type, Weight and Horsepower. Linear regression model:
+
+$$MPG = \beta_0 + \beta_{1}AM + \beta_{2}HP + \beta_{3}WT + \epsilon$$
+
+```{r}
+fit <- lm(mpg ~ am + wt + hp, data = mtcars)
+```
+
+Coefficient for the $\beta_0, \beta_1, \beta_2 and \beta_3$
+
+```{r, echo=FALSE}
+library(knitr)
+kable(summary(fit)$coef)
+```
+
+Details of Application
+========================================================
+
+Shiny App Screen Shot
+![Shiny App](MotorTrendApplication-figure/plot.png "Plot")
+![Shiny App](MotorTrendApplication-figure/predict.png "prediction")
+
+***
+
+URL
+
+- [Shiny Application](https://hengkar.shinyapps.io/MotorTrendAnalysis/)
+
+- [Pitch Presentation](https://hengkar.shinyapps.io/MotorTrendAnalysis/)
+
+- [Github Source Code](https://github.com/hengkar/Developing_Data_Products-Assignment)
+
